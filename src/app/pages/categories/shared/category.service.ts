@@ -5,7 +5,6 @@ import { Observable, throwError, from } from 'rxjs';
 import { map, catchError, flatMap } from 'rxjs/operators';
 
 import { Category } from './category.model';
-import { element } from '@angular/core/src/render3';
 
 
 @Injectable({
