@@ -16,7 +16,7 @@ export class CategoryService {
 
   constructor(private http: HttpClient) { }
 
-  getBy(id: number): Observable<Category> {
+  getById(id: number): Observable<Category> {
     const url = `${this.apiPath}/${id}`;
 
     return this.http.get(url).pipe(
