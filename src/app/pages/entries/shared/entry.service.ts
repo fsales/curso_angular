@@ -12,7 +12,7 @@ import { Entry } from './entry.model';
 })
 export class EntryService {
 
-  private apiPath: string = "api/entry";
+  private apiPath: string = "api/entries";
 
   constructor(private http: HttpClient) { }
 
@@ -56,13 +56,16 @@ export class EntryService {
   }
 
   private jsonDataToEntry(jsonData: any): Entry {
-    return jsonData as Entry;
+    return Object.assign(new Entry(), jsonData);
   }
 
   private jsonDataToEntries(jsondData: any[]): Entry[] {
     const entries: Entry[] = [];
 
-    jsondData.forEach(element => entries.push(element as Entry));
+    jsondData.forEach(element => {
+      const entry:Entry = Object.assign(new Entry(), element);
+      entries.push(entry);
+    });
 
     return entries;
   }
