@@ -84,11 +84,11 @@ export class EntryFormComponent extends BaseResourceFormComponent<Entry> impleme
     });
   }
   protected creationPageTitle() {
-    return "Cadastro de Nova Categoria";
+    return "Cadastro de Novo Lançamento";
   }
 
   protected editionPageTitle(): string {
     const resourceyName = this.resource.name || "";
-    return "Editando Categoria: " + resourceyName;
+    return "Editando Lançamento: " + resourceyName;
   }
 }
