@@ -12,16 +12,20 @@ export class Entry extends BaseResourceModel {
         public paid?: boolean,
         public categoryId?: number,
         public category?: Category
-    ) { 
+    ) {
         super();
     }
 
-    static types ={
+    static types = {
         expense: 'Despesa',
         revenue: 'Receta'
     }
 
-    get paidText():string{
-        return this.paid ? 'Pago': 'Pendente';
+    get paidText(): string {
+        return this.paid ? 'Pago' : 'Pendente';
+    }
+
+    static fromJson(jsonData: any) {
+        return Object.assign(new Entry, jsonData);
     }
 }
