@@ -7,7 +7,7 @@ import { EntryService } from "../shared/entry.service";
 
 import { switchMap } from "rxjs/operators";
 
-import toastr from "toastr";
+import * as toastr from 'toastr';
 
 import { Category } from '../../categories/shared/category.model';
 import { CategoryService } from '../../categories/shared/category.service';
