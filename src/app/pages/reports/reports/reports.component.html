@@ -4,9 +4,7 @@
 
 <app-page-header 
   page-title="Relatório de Receita e Despesas" 
-  button-text=""
-  button-link="" 
-  button-class=""></app-page-header>
+  [show-button]="false"></app-page-header>
 
 <div class="card">
   <div class="card-header">
@@ -58,7 +56,7 @@
       </div>
       <div class="card-body">
         <h3 class="card-title">
-          1500
+          {{revenueTotal}}
         </h3>
       </div>
     </div>
@@ -69,7 +67,7 @@
       </div>
       <div class="card-body">
         <h3 class="card-title">
-          1500
+          {{expenseTotal}}
         </h3>
       </div>
     </div>
@@ -80,7 +78,7 @@
       </div>
       <div class="card-body">
         <h3 class="card-title">
-          1500
+          {{balance}}
         </h3>
       </div>
     </div>
@@ -91,10 +89,10 @@
 
 <div class="row mt-5 mb-4">
   <div class="col-md-6">
-    Gráfico de receitas
+    <p-chart type="bar" [data]="revenueChartData" [options]="chartOptions" ></p-chart>
   </div>
 
   <div class="col-md-6">
-    Gráfico de despesas
+    <p-chart type="bar" [data]="expenseChartData" [options]="chartOptions" ></p-chart>
   </div>
 </div>
